@@ -2,10 +2,10 @@
 <p align="center">
   <img src="docs/assets/logo.png" alt="WeSpark Logo" width="120" height="120"/>
 </p>
+<p align="center"><b>WeSpark: A Full-Stack Learning & Opportunity Dashboard</b></p>
 <p align="center">
-  <b>WeSpark: A Full-Stack Learning & Opportunity Dashboard</b><br/>
-  <a href="#">![Build Status](https://img.shields.io/badge/build-passing-brightgreen)</a>
-  <a href="LICENSE">![License](https://img.shields.io/badge/license-MIT-blue.svg)</a>
+  <img src="https://img.shields.io/badge/build-passing-brightgreen" alt="Build Status"/>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"/></a>
 </p>
 
 ---
