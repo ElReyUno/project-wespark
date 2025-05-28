@@ -1,4 +1,4 @@
-# WeSpark Backend API
+# WeSpark Backend API (Node.js + Express)
 
 ## Overview
 The WeSpark Backend is a Node.js and Express.js RESTful API that serves as the data and business logic layer for the WeSpark platform. It receives, validates, and persists feedback and opportunity data submitted by clients (mobile and web), and exposes endpoints for data retrieval and analysis. The backend is designed for scalability, maintainability, and easy integration with both local and cloud-based storage solutions.
