@@ -46,6 +46,7 @@ WeSpark is a comprehensive full-stack application developed to demonstrate capab
     - **Framework:** Express.js (`~4.18.x` or specified version)
     - **Data Persistence (Initial):** Local JSON file, managed via Node.js `fs` module.
     - **Package Manager:** npm (`v9.x` or specified version)
+    - **CORS Middleware:** Enabled via the `cors` package in the backend API to allow secure cross-origin requests from the Angular web dashboard and other clients.
 
 - **Mobile Application:**
     - **Framework:** .NET MAUI (Multi-platform App UI)
@@ -53,6 +54,8 @@ WeSpark is a comprehensive full-stack application developed to demonstrate capab
     - **Language:** C#
     - **User Interface:** XAML
     - **Key Architectural Concept:** Illustrates a contemporary approach to cross-platform native application development, succeeding Xamarin.Forms and enabling a single C# codebase for multiple targets.
+    - **Recommended IDE:** Visual Studio 2022 (Windows) – fully supported for .NET MAUI development, including design, build, deploy, and debugging for Android, iOS, Windows, and Mac targets.
+    - **Recommended VS Code Extension:** [.NET MAUI Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-maui-vscode) – enables MAUI development, debugging, and deployment directly from VS Code.
 
 - **Web Dashboard (Frontend SPA):**
     - **Framework:** Angular (`v16.x` or specified version)
@@ -60,6 +63,9 @@ WeSpark is a comprehensive full-stack application developed to demonstrate capab
     - **Core Technologies:** HTML5, CSS3 (Optionally Angular Material `v16.x` for UI components)
     - **Data Interaction:** Angular `HttpClientModule` for API communication.
     - **Package Manager:** npm (`v9.x` or specified version), managed via Angular CLI.
+
+- **API Development & Testing:**
+    - **Tool:** Postman – used for designing, testing, and documenting REST API endpoints
 
 - **Version Control & Collaboration:**
     - **System:** Git
@@ -73,6 +79,7 @@ WeSpark is a comprehensive full-stack application developed to demonstrate capab
 
 - **Development Environments:**
     - **Primary IDEs:** Visual Studio Code (for Node.js/Angular, primarily within WSL Ubuntu `22.04 LTS` or specified version), Visual Studio 2022 (for .NET MAUI).
+    - **.NET MAUI VS Code Extension:** [VS Code .NET MAUI Extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-maui) – enables .NET MAUI development directly in VS Code, including debugging, hot reload, and device deployment.
     - **Operating System Flexibility:** The project supports development across Windows, macOS, and Linux, with this instance utilizing WSL for Linux-based development of backend/frontend components alongside Windows for .NET MAUI.
 
 - **Cloud Architecture Considerations (Backend Deployment Strategy):**
