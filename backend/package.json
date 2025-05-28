@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "RESTful API backend for the WeSpark platform (Node.js/Express, JSON storage).",
+  "main": "src/server.js ",
+  "scripts": {
+    "test": "echo \\\"No test specified\\\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElReyUno/project-wespark.git"
+  },
+  "keywords": [
+    "wespark",
+    "backend",
+    "nodejs",
+    "express",
+    "api",
+    "json",
+    "feedback"
+  ],
+  "author": "El Rey Uno",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ElReyUno/project-wespark/issues"
+  },
+  "homepage": "https://github.com/ElReyUno/project-wespark#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
