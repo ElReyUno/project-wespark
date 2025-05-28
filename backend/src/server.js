@@ -2,18 +2,53 @@
 
 const express = require('express');
 const app = express();
+const fs = require('fs');
+const path = require('path');
+const cors = require('cors');
 
 // Define the port. It's good practice to use an environment variable
 // for the port in production, but fall back to 3000 for development.
 const PORT = process.env.PORT || 3000;
+const FEEDBACK_FILE_PATH = path.join(__dirname, '..', 'feedback.json');
 
-// Middleware to parse JSON bodies (if you're sending JSON from MAUI/Angular)
+// Enable CORS for all routes (frontend integration)
+// CORS could also be configured for production for specific domains
+app.use(cors({
+  origin: ['http://localhost:4200'], // Angular dev URL
+  methods: ['GET', 'POST'],
+  credentials: true,
+}));
+
+// Middleware to parse JSON bodies (Sends JSON from MAUI/Angular)
 app.use(express.json());
-// Middleware to parse URL-encoded bodies (less common for APIs, but good to know)
+// Middleware to parse URL-encoded bodies
 // app.use(express.urlencoded({ extended: true }));
 
-// --- Your API Endpoints Will Go Here ---
-// Example:
+// Function to read feedback from the JSON file
+const readFeedbackFromFile = () => {
+  try {
+    if (fs.existsSync(FEEDBACK_FILE_PATH)) {
+      const fileData = fs.readFileSync(FEEDBACK_FILE_PATH, 'utf-8');
+      return JSON.parse(fileData);
+    }
+    return []; // Return empty array if file doesn't exist
+  } catch (error) {
+    console.error('Error reading feedback file:', error);
+    return []; // Return empty array on error to prevent crashes
+  }
+};
+
+// Function to write feedback to the JSON file
+const writeFeedbackToFile = (feedbackArray) => {
+  try {
+    fs.writeFileSync(FEEDBACK_FILE_PATH, JSON.stringify(feedbackArray, null, 2), 'utf-8');
+  } catch (error) {
+    console.error('Error writing feedback file:', error);
+  }
+};
+
+// --- API Endpoints ---
+// GET /feedback – retrieve stored data
 app.get('/', (req, res) => {
   res.send('WeSpark Backend API: Where Together We Spark Potential!');
 });
@@ -26,14 +61,21 @@ app.post('/api/feedback', (req, res) => {
   res.status(201).json({ message: 'Feedback received successfully', data: feedbackData });
 });
 
-// GET /api/feedback endpoint (as per your project description)
-app.get('/api/feedback', (req, res) => {
-  console.log('Fetching all feedback...');
-  // TODO: Retrieve feedbackData (from in-memory store or feedback.json)
-  const allFeedback = [
-    { rating: 5, comment: "Initial test feedback!" },
-    { rating: 3, comment: "Another piece of feedback." }
-  ]; // Replace with actual data retrieval
+// POST /feedback endpoint – store new data to feedback.json
+app.post('/feedback', (req, res) => {
+  const feedbackData = req.body;
+  if (!feedbackData || typeof feedbackData !== 'object') {
+    return res.status(400).json({ message: 'Invalid feedback data.' });
+  }
+  const allFeedback = readFeedbackFromFile();
+  allFeedback.push(feedbackData);
+  writeFeedbackToFile(allFeedback);
+  res.status(201).json({ message: 'Feedback received successfully', data: feedbackData });
+});
+
+// GET /feedback endpoint – retrieve stored data
+app.get('/feedback', (req, res) => {
+  const allFeedback = readFeedbackFromFile();
   res.status(200).json(allFeedback);
 });
 // --- End of API Endpoints ---

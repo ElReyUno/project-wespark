@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1700000000001",
+    "rating": 5,
+    "comment": "WeSpark Backend API: Where Together We Spark Potential",
+    "timestamp": "2023-11-01T10:00:00.000Z"
+  },
+  {
+    "id": "1700000000002",
+    "rating": 3,
+    "comment": "Could use some improvements here.",
+    "timestamp": "2023-11-01T10:05:00.000Z"
+  }
+]
