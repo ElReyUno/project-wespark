@@ -9,6 +9,7 @@ const cors = require('cors');
 // Define the port. It's good practice to use an environment variable
 // for the port in production, but fall back to 3000 for development.
 const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || '0.0.0.0';
 const FEEDBACK_FILE_PATH = path.join(__dirname, '..', 'feedback.json');
 
 // Enable CORS for all routes (frontend integration)
@@ -82,6 +83,6 @@ app.get('/feedback', (req, res) => {
 
 
 // Start the server and listen on the defined port
-app.listen(PORT, () => {
+app.listen(PORT, HOST, () => {
   console.log(`WeSpark backend server is running on http://localhost:${PORT}`);
 });
