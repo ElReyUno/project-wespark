@@ -122,7 +122,7 @@ Detailed setup and execution instructions for each component are available in th
 *   Relevant IDEs (Visual Studio Code, Visual Studio 2022)
 
 **Brief Execution Overview:**
-1.  **Backend API:** Navigate to `backend/`, run `npm install`, then `npm start`. Typically available at `http://localhost:3000`.
+1.  **Backend API:** Navigate to `backend/`, run `npm install`, then `npm start`. Typically available at `http://192.168.0.152:3000`.
 2.  **Mobile App:** Open `mobile-app/WeSparkApp/WeSparkApp.csproj` in Visual Studio. Ensure .NET MAUI workloads are installed. Configure the API endpoint within the app to point to the running backend. Build and deploy to the desired target (emulator/device).
 3.  **Web Dashboard:** Navigate to `web-dashboard/`, run `npm install`, then `ng serve`. Typically available at `http://localhost:4200`. Ensure the Angular service is configured to use the backend API URL.
 

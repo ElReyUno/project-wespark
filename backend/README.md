@@ -52,7 +52,7 @@ npm install
 ```bash
 npm start
 ```
-The API will be available at [http://localhost:3000](http://localhost:3000) by default.
+The API will be available at [http://192.168.0.152:3000](http://192.168.0.152:3000) by default.
 
 ### API Endpoints
 > **Note:** The following are example endpoints. Please refer to the source code for the latest details.

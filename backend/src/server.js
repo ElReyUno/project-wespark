@@ -15,7 +15,7 @@ const FEEDBACK_FILE_PATH = path.join(__dirname, '..', 'feedback.json');
 // Enable CORS for all routes (frontend integration)
 // CORS could also be configured for production for specific domains
 app.use(cors({
-  origin: ['http://localhost:4200'], // Angular dev URL
+  origin: ['http://localhost:4200', 'http://192.168.0.152:4200'], // Angular dev URLs
   methods: ['GET', 'POST'],
   credentials: true,
 }));
@@ -84,5 +84,5 @@ app.get('/feedback', (req, res) => {
 
 // Start the server and listen on the defined port
 app.listen(PORT, HOST, () => {
-  console.log(`WeSpark backend server is running on http://localhost:${PORT}`);
+  console.log(`WeSpark backend server is running on http://${HOST}:${PORT}`);
 });

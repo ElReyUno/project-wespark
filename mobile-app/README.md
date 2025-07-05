@@ -51,7 +51,7 @@ mobile-app/
 
 ### Configuring the API Endpoint
 - Locate the API endpoint configuration in the app (typically in a constants/settings file or service class).
-- Set the URL to match your running backend API (e.g., `http://localhost:3000` for local development).
+- Set the URL to match your running backend API (e.g., `http://192.168.0.152:3000` for local development).
 
 ---
 
