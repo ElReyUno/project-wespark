@@ -128,6 +128,30 @@ Detailed setup and execution instructions for each component are available in th
 
 ---
 
+## 🔧 API Configuration
+
+The WeSpark application components communicate via REST API calls. Proper configuration is essential for development and deployment.
+
+**Current Configuration:**
+- Backend API: `http://192.168.0.152:3000`
+- CORS enabled for Angular development server
+- Centralized configuration files for easy updates
+
+**Key Configuration Files:**
+- `web-dashboard/src/environments/environment.ts` - Angular API URL
+- `mobile-app/WeSparkApp/Configuration/AppConfig.cs` - MAUI API settings
+- `backend/src/server.js` - CORS and server configuration
+
+**Quick Setup Script:**
+```bash
+# Update all API URLs across the project
+./update-api-url.sh http://your-new-api-url:3000
+```
+
+For detailed configuration instructions, see [API-Configuration-Guide.md](API-Configuration-Guide.md).
+
+---
+
 ## ✨ Alignment with Technical Proficiencies
 
 The "WeSpark" project is designed to demonstrate practical application of skills relevant to full-stack development roles:
