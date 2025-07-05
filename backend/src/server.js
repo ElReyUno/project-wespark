@@ -62,6 +62,21 @@ app.post('/api/feedback', (req, res) => {
   res.status(201).json({ message: 'Feedback received successfully', data: feedbackData });
 });
 
+// POST /api/clicks endpoint - track click events
+app.post('/api/clicks', (req, res) => {
+  const clickData = req.body;
+  console.log('Received click data:', clickData);
+  // TODO: Store click data (in-memory or to a clicks.json file)
+  res.status(201).json({ message: 'Click tracked successfully', data: clickData });
+});
+
+// GET /api/clicks endpoint - retrieve click data
+app.get('/api/clicks', (req, res) => {
+  // TODO: Implement reading click data from storage
+  const clickData = []; // Placeholder - replace with actual data retrieval
+  res.status(200).json(clickData);
+});
+
 // POST /feedback endpoint – store new data to feedback.json
 app.post('/feedback', (req, res) => {
   const feedbackData = req.body;
